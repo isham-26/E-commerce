@@ -97,13 +97,13 @@ const Navbar = () => {
             <Link href="/category/mens">
               <li className="hover:text-black ease-in-out duration-300">Men</li>
             </Link>
-            <Link href="//category/women">
+            <Link href="/category/women">
               {" "}
               <li className="hover:text-black ease-in-out duration-300">
                 Women
               </li>
             </Link>
-            <Link href="//category/kids">
+            <Link href="/category/kids">
               <li className="hover:text-black ease-in-out duration-300">
                 Kids
               </li>

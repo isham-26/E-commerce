@@ -6,7 +6,7 @@ Image
 const Offers = () => {
   return (
     <div className=" flex justify-center items-center md:mt-10 mt-3">
-      <div className="md:w-[80%] w-[94%] flex p-3 bg-gradient-to-b from-pink-200 to-white border-b shadow-md rounded-md">
+      <div className="md:w-[80%] w-[94%] flex p-3 bg-gradient-to-b from-pink-200 to-white border-b shadow-md">
         <div className="flex-[1] flex md:gap-8 gap-4 flex-col md:px-10 justify-center">
           <div className="flex flex-col ">
             <p className="md:text-8xl text-xl">Exclusive</p>
