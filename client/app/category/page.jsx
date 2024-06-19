@@ -5,7 +5,7 @@ import baner from "@/public/benar.jpg";
 import { ShopContext } from "@/app/context/ShopContext";
 import Ccard from "../components/category-card/Ccard";
 import Card from "../components/card_item/Card";
-const page = () => {
+const Page = () => {
   const { all_product } = useContext(ShopContext);
   const [values, setValue] = useState("All products");
   const size=all_product.length;
@@ -39,4 +39,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
