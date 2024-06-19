@@ -38,20 +38,10 @@ const Navbar = () => {
                   Shop
                 </li>
               </Link>
-              <Link href="/category/mens">
+             
+              <Link href="/category">
                 <li className="hover:text-black ease-in-out duration-300">
-                  Men
-                </li>
-              </Link>
-              <Link href="/category/women">
-                {" "}
-                <li className="hover:text-black ease-in-out duration-300">
-                  Women
-                </li>
-              </Link>
-              <Link href="/category/kids">
-                <li className="hover:text-black ease-in-out duration-300">
-                  Kids
+                  categorys
                 </li>
               </Link>
               <Link href="/">

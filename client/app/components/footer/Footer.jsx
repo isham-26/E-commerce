@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="">
-          <ul className="flex gap-5 font-semibold text-gray-600 text-[11px]">
+          <ul className="flex gap-5 font-semibold text-gray-600 text-[11px] md:text-xl">
               <Link href="/">
                 <li className="hover:text-black ease-in-out duration-300">
                   Company
