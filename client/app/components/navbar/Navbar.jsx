@@ -57,8 +57,8 @@ const Navbar = () => {
             <Link href="/cart">
               <GrCart className="md:text-3xl text-2xl" />
             </Link>
-            <div className="absolute top-0 right-0 flex justify-center items-center h-[15px] w-[15px] rounded-full bg-red-600">
-              <span className="text-[10px] text-white">{lencart()}</span>
+            <div className={` top-0 right-0 flex justify-center items-center md:h-[15px] md:w-[15px]  h-[12px] w-[12px] rounded-full bg-red-600 ${lencart()===0?"hidden":"absolute"}`}>
+              <span className="md:text-[10px] text-[8px] text-white">{lencart()}</span>
             </div>
           </div>
           <Link href="/login">
