@@ -4,8 +4,9 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { GiShoppingCart } from "react-icons/gi";
 import { ShopContext } from "../context/ShopContext";
+import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 const CartPage = () => {
-  const { getTotalCartAmount, itemCarts, all_product ,lencart,increse,decrease,new_arr} =
+  const { getTotalCartAmount, itemCarts, all_product ,lencart,increse,decrease,new_arr,removeToCart} =
     useContext(ShopContext);
   
   return (
@@ -31,26 +32,27 @@ const CartPage = () => {
             </h3>
           </div>
           {new_arr.map((item) => {
-            if (itemCarts[item.id] > 0) {
+            if (itemCarts[item.id]===true) {
               return (
-                <Link
+                <div
                   key={item.id}
                   className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
-                  href={`/product/${item.id}`}
                 >
                   <div className="flex flex-col w-full lg:w-2/5 gap-2">
-                    <div className="md:w-20 w-14">
+                  
+                    <Link className="md:w-20 w-14" href={`/product/${item.id}`}>
                       <Image
                         className="md:h-24 h-14 object-cover"
                         src={item.image}
                         alt="product"
                       />
-                    </div>
+                    </Link>
                     <div className="flex flex-col justify-between gap-1 flex-grow md:text-[18px] text-[8px]">
-                      <span className="font-bold ">{item.name}</span>
-                      <Link href="/" className="font-semibol text-red-500 ">
+                      <Link className="font-bold " href={`/product/${item.id}`}>{item.name}</Link>
+                      <span href="/" className="font-semibol text-indigo-600 flex gap-2 items-center cursor-pointer hover:text-red-500 md:w-[6rem]" onClick={()=>removeToCart(item.id)}>
+                      <MdOutlineRemoveShoppingCart />
                         Remove
-                      </Link>
+                      </span>
                     </div>
                   </div>
                   <div className="flex justify-center w-full lg:w-1/5 text-[12px] md:text-[20px]">
@@ -76,13 +78,13 @@ const CartPage = () => {
                   <span className="text-center w-full lg:w-1/5 font-semibold text-[12px] md:text-[20px] text-gray-500">
                     Rs.{item.quantity===undefined?item.new_price:item.new_price*item.quantity}
                   </span>
-                </Link>
+                </div>
               );
             }
           })}
           <Link
             href="/"
-            className="flex items-center gap-2 font-semibold text-indigo-600 md:text-xl mt-10"
+            className="flex items-center gap-2 font-semibold text-indigo-600 md:text-xl mt-10 hover:text-indigo-400"
           >
             <GiShoppingCart className="md:text-2xl text-xl" />
             Continue Shopping

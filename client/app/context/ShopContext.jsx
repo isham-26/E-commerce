@@ -5,7 +5,7 @@ import all_product from "../components/Assets/all_product";
 const getDefaltCart = ()=>{
    const cartArr=[];
    for (let index = 0; index < all_product.length; index++) {
-       cartArr[index]=0;
+       cartArr[index]=false;
     
    }
    return cartArr;
@@ -39,18 +39,18 @@ const ShopContextProvider = ({ children }) => {
     setNewarr(newCartItems);
   };
   const addToCart =(productId)=>{
-     setItemCarts((prev)=>({...prev,[productId]:prev[productId]++}))
+     setItemCarts((prev)=>({...prev,[productId]:true}))
      
       
   }
   const removeToCart =(productId)=>{
-    setItemCarts((prev)=>({...prev,[productId]:prev[productId]--}))
+    setItemCarts((prev)=>({...prev,[productId]:false}))
      
   }
   const getTotalCartAmount =()=>{
       let totalAmount=0;
       for(const item in itemCarts){
-          if(itemCarts[item]>0){
+          if(itemCarts[item]===true){
               let iteminfo=new_arr.find((product)=>product.id===Number(item))
               if(iteminfo.quantity===undefined){
                 totalAmount+=iteminfo.new_price;
@@ -66,7 +66,7 @@ const ShopContextProvider = ({ children }) => {
   const lencart =()=>{
       let len=0;
       for(const item in itemCarts){
-          if(itemCarts[item]>0){
+          if(itemCarts[item]===true){
               len++;
           }
       }

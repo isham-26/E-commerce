@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GrCart } from "react-icons/gr";
 import { SiShopify } from "react-icons/si";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
 import Link from "next/link";
+import { ShopContext } from "@/app/context/ShopContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {lencart}=useContext(ShopContext);
   return (
     <div className="flex md:flex-row flex-col justify-center border bg-slate-100">
       <div className="md:w-[80%] w-full flex justify-between items-center p-4">
@@ -55,8 +57,8 @@ const Navbar = () => {
             <Link href="/cart">
               <GrCart className="md:text-3xl text-2xl" />
             </Link>
-            <div className="absolute top-0 right-0 flex justify-center items-center h-[13px] w-[13px] rounded-full bg-red-600">
-              <span className="text-[8px] text-white">4</span>
+            <div className="absolute top-0 right-0 flex justify-center items-center h-[15px] w-[15px] rounded-full bg-red-600">
+              <span className="text-[10px] text-white">{lencart()}</span>
             </div>
           </div>
           <Link href="/login">
