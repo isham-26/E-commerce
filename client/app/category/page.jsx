@@ -16,10 +16,10 @@ const Page = () => {
           <Image
             src={baner}
             alt="img"
-            className="w-full h-[25rem] object-cover rounded-xl"
+            className="w-full md:h-[25rem] object-cover md:rounded-xl"
           />
-          <div className="flex justify-between items-center">
-            <span className="text-xl font-semibold">12 out of {size} Product</span>
+          <div className="flex justify-between items-center px-4">
+            <span className="md:text-xl font-semibold ">12 out of {size} Product</span>
             <select
               name=""
               id=""
