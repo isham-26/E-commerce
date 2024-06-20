@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import { GrCart } from "react-icons/gr";
+import { GiShoppingCart } from "react-icons/gi";
 import { SiShopify } from "react-icons/si";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
@@ -17,9 +18,9 @@ const Navbar = () => {
           <div className="flex gap-2 items-center">
             <SiShopify className="md:text-6xl text-3xl text-yellow-400" />
             <div className="md:text-4xl text-xl flex flex-col text-blue-600">
-              FlodCart
+              FoldCart
               <span className="hidden md:block text-sm text-gray-400">
-                Shoping here
+                Shopping here
               </span>
             </div>
           </div>
@@ -55,7 +56,8 @@ const Navbar = () => {
           </div>
           <div className="flex relative">
             <Link href="/cart">
-              <GrCart className="md:text-3xl text-2xl" />
+              {/* <GrCart className="md:text-3xl text-2xl" /> */}
+              <GiShoppingCart className="md:text-4xl text-3xl"/>
             </Link>
             <div className={` top-0 right-0 flex justify-center items-center md:h-[15px] md:w-[15px]  h-[12px] w-[12px] rounded-full bg-red-600 ${lencart()===0?"hidden":"absolute"}`}>
               <span className="md:text-[10px] text-[8px] text-white">{lencart()}</span>
@@ -86,20 +88,10 @@ const Navbar = () => {
                 Shop
               </li>
             </Link>
-            <Link href="/category/mens">
-              <li className="hover:text-black ease-in-out duration-300">Men</li>
+            <Link href="/category">
+              <li className="hover:text-black ease-in-out duration-300">Category</li>
             </Link>
-            <Link href="/category/women">
-              {" "}
-              <li className="hover:text-black ease-in-out duration-300">
-                Women
-              </li>
-            </Link>
-            <Link href="/category/kids">
-              <li className="hover:text-black ease-in-out duration-300">
-                Kids
-              </li>
-            </Link>
+            
             <Link href="/">
               <li className="hover:text-black ease-in-out duration-300">
                 About

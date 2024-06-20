@@ -10,8 +10,8 @@ const CartPage = () => {
     useContext(ShopContext);
   
   return (
-    <div className="container mx-auto mt-10 md:px-4">
-      <div className="flex flex-col lg:flex-row shadow-md my-10">
+    <div className="flex justify-center mx-auto md:mt-7 md:px-4">
+      <div className="flex flex-col lg:flex-row shadow-md md:my-7 md:w-[80%]">
         <div className="w-full lg:w-3/4 bg-white px-10 py-10">
           <div className="flex justify-between border-b pb-3 md:pb-8">
             <h1 className="font-semibold md:text-2xl text-sm">Shopping Cart</h1>
@@ -84,7 +84,7 @@ const CartPage = () => {
           })}
           <Link
             href="/"
-            className="flex items-center gap-2 font-semibold text-indigo-600 md:text-xl mt-10 hover:text-indigo-400"
+            className="flex items-center gap-2 font-semibold text-indigo-600 md:text-xl mt-10 hover:text-indigo-800 w-[14rem]"
           >
             <GiShoppingCart className="md:text-2xl text-xl" />
             Continue Shopping

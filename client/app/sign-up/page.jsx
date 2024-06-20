@@ -49,7 +49,7 @@ export default function page() {
                   continue
                 </button>
                 <div className="flex gap-4 items-center">
-                 <p className="">Already have a account</p>
+                 <p className="text-[12px]">Already have a account</p>
                 <Link href="/login" className="text-sm text-blue-600 hover:underline">
                    login
                 </Link>

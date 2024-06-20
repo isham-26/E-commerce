@@ -11,7 +11,7 @@ const Page = () => {
   const size=all_product.length;
   return (
     <div className="flex justify-center items-center">
-      <div className="md:w-[80%] flex flex-col gap-10">
+      <div className="md:w-[80%] flex flex-col md:gap-10 gap-5">
         <div className="flex-col flex gap-6 md:mt-5">
           <Image
             src={baner}

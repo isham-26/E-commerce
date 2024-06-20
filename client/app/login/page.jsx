@@ -38,7 +38,7 @@ export default function page() {
                   Login
                 </button>
                 <div className="flex gap-4 items-center">
-                 <p className="">create new account</p>
+                 <p className="text-[12px]">create new account</p>
                 <Link href="/sign-up" className="text-sm text-blue-600 hover:underline">
                    sign up
                 </Link>
