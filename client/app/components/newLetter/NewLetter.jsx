@@ -11,7 +11,7 @@ const NewLetter = () => {
           </p>
           <div className="flex relative">
             <input type="text" placeholder="Your Email" className="md:p-4 p-[3px] rounded-full md:w-[50rem] border-2 focus:outline-none px-4" />
-            <button className="flex items-center bg-black text-white  gap-3 md:w-[13rem] md:p-4 justify-center rounded-full py-2 text-[10px] md:text-xl w-[6rem] absolute right-0">
+            <button className="flex items-center bg-black text-white md:gap-3 gap-2 md:w-[13rem] md:p-[15px] justify-center rounded-full py-[10px] text-[8px] md:text-xl w-[5rem] absolute right-0">
               Subscribe
               <PiBellRingingBold className="" />
             </button>

@@ -49,7 +49,7 @@ const ShopContextProvider = ({ children }) => {
   }
   const getTotalCartAmount =()=>{
       let totalAmount=0;
-      for(const item in itemCarts){
+      for(const item in itemCarts){ //item gives index because in is here(const item in itemCarts)
           if(itemCarts[item]===true){
               let iteminfo=new_arr.find((product)=>product.id===Number(item))
               if(iteminfo.quantity===undefined){
@@ -72,7 +72,17 @@ const ShopContextProvider = ({ children }) => {
       }
       return len;
   }
-  const contextValue = {all_product,addToCart,itemCarts,removeToCart,getTotalCartAmount,lencart,increse,decrease,new_arr};
+  const totalCartItems =()=>{
+      let totalitems=0;
+      for(const item of new_arr){ //item gives one element in array because in is here (const item of new_arr)
+          if(itemCarts[item.id]===true){
+            
+            totalitems+=(item.quantity!==undefined?item.quantity:1);
+          }
+      }
+      return totalitems;
+  }
+  const contextValue = {all_product,addToCart,itemCarts,removeToCart,getTotalCartAmount,lencart,increse,decrease,new_arr,totalCartItems};
   return (
     <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
   );

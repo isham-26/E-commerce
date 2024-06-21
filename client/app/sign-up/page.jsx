@@ -3,8 +3,8 @@ import React from "react";
 import Link from "next/link";
 export default function page() {
   return (
-    <div className="flex items-center justify-center h-[90vh] bg-gradient-to-b from-pink-200 to-white">
-      <div className="md:w-[25%] w-full p-3">
+    <div className="flex md:items-center justify-center md:h-[90vh] h-[63vh] bg-gradient-to-b from-pink-200 to-white">
+      <div className="md:w-[25%] w-full p-3 mt-16 md:mt-0">
         <div className="">
           <h3 className="text-2xl font-bold text-center">
             Create new your account

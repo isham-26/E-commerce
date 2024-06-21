@@ -6,7 +6,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import { ShopContext } from "../context/ShopContext";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 const CartPage = () => {
-  const { getTotalCartAmount, itemCarts, all_product ,lencart,increse,decrease,new_arr,removeToCart} =
+  const { getTotalCartAmount, itemCarts, all_product ,lencart,increse,decrease,new_arr,removeToCart,totalCartItems} =
     useContext(ShopContext);
   
   return (
@@ -48,7 +48,7 @@ const CartPage = () => {
                       />
                     </Link>
                     <div className="flex flex-col justify-between gap-1 flex-grow md:text-[18px] text-[8px]">
-                      <Link className="font-bold " href={`/product/${item.id}`}>{item.name}</Link>
+                      <Link className="font-bold line-clamp-2" href={`/product/${item.id}`}>{item.name}</Link>
                       <span href="/" className="font-semibol text-indigo-600 flex gap-2 items-center cursor-pointer hover:text-red-500 md:w-[6rem]" onClick={()=>removeToCart(item.id)}>
                       <MdOutlineRemoveShoppingCart />
                         Remove
@@ -96,10 +96,10 @@ const CartPage = () => {
           </h1>
           <div className="flex justify-between mt-10 mb-5 text-gray-500">
             <span className="font-semibold md:text-[19px] uppercase text-sm">
-              Total Items {itemCarts.length}
+              Total Items
             </span>
             <span className="font-semibold md:text-[19px] text-sm">
-              Rs.{getTotalCartAmount()}
+              {totalCartItems()}
             </span>
           </div>
           <div className="border-t mt-8">
